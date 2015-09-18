@@ -3,15 +3,28 @@ public class Node {
 	private boolean letter;
 	private double cost;
 
-	public Node(Node north, Node south, Node west, Node east, boolean letter,
+	public Node(boolean letter,
 			double cost) {
 		super();
-		this.north = north;
-		this.south = south;
-		this.west = west;
-		this.east = east;
+	
 		this.letter = letter;
 		this.cost = cost;
+	}
+	
+	public void SetNorth(Node node){
+		
+		north = node;
+		
+		
+	}
+	public void SetSouth(Node node){
+		south = node;
+	}
+	public void SetEast(Node node){
+		east = node;
+	}
+	public void SetWest(Node node){
+		west = node;
 	}
 
 	public Node getNorth() {
