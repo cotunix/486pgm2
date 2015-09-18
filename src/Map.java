@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class Map {
+	public Node[][] map;
 	private int width, height, startingX, startingY;
 	private Scanner fileIn;
 	private boolean[][] letterMap;
-	private double[][] costMap;
-	private Node[][] map;
+	private double[][] costMap;	
 	private int letters;
 
 	public Map(String txtfile) {
@@ -20,7 +20,7 @@ public class Map {
 			height = fileIn.nextInt();
 
 			startingX = fileIn.nextInt();
-			startingY = fileIn.nextInt();
+			startingY = Math.abs(fileIn.nextInt() - height - 1) ;
 
 			for (int i = 0; i < width; i++) {
 				for (int j = 0; j < height; j++) {
@@ -84,5 +84,11 @@ public class Map {
 	}
 	public int getLetters(){
 		return letters;
+	}
+	public int getHeight(){
+		return height;
+	}
+	public int getWidth(){
+		return width;
 	}
 }

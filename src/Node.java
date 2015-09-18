@@ -1,7 +1,12 @@
 public class Node {
 	private Node north, south, east, west;	
+	
 	private boolean letter;
 	private double cost;
+	private boolean visited, explored;
+	public int letters;
+	public int runningCost;
+	public String parent;
 
 	public Node(boolean letter,
 			double cost) {
@@ -49,5 +54,17 @@ public class Node {
 
 	public double getCost() {
 		return cost;
+	}
+	public void setVisited(boolean b){
+		visited = b;
+	}
+	public boolean isVisited(){
+		return visited;
+	}
+	public void setExplored(boolean b){
+		explored = b;
+	}
+	public boolean isExplored(){
+		return explored;
 	}
 }
